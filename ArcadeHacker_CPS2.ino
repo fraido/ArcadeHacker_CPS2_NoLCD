@@ -1,4 +1,4 @@
-// CPS2 Desuicider 1.06 by arcadehacker.blogspot.com
+// CPS2 Desuicider 2.07 by Fraido from arcaderaidi.com
 
 // Changes
 // Version 1.00: [Eduardo] Initial code.
@@ -10,11 +10,12 @@
 // Version 1.06: [Eduardo] Added back clones to avoid user confusion. Added ssf2tba, xmcotab. Thanks Brian & smf.
 //               [Artemio] Modified clock signal order for improved compatibility with board revs 4 & 5
 // Version 1.07: [Eduardo] Fixed keys for batcirj, spf2t, previously broken again in 1.06. Thanks Konosuke.
+// Version 2.07: [Fraido]  Forked from main repository. No LCD mod.
                  
-#include <LiquidCrystal.h>
+// #include <LiquidCrystal.h>
 
 // initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
+// LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
 //  CPS2 Board CN9 interface pins
 #define DATA        2   //CN9 #2 
