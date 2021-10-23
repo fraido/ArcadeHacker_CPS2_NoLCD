@@ -1,16 +1,16 @@
-// CPS2 Desuicider 2.07 by Fraido from arcaderaidi.com
+// CPS2 Desuicider 1.07 by Fraido from arcaderaidi.com
 
 // Changes
-// Version 1.00: [Eduardo] Initial code.
-// Version 1.01: [Artemio] Moved strings and keys to flash memory.
-// Version 1.02: [Artemio] Removed spaces from game names, refactored code a bit, added left and right menu navigation.
-// Version 1.03: [Artemio] Changed startup and end values in lines for consistent results on boards without CN9.
-// Version 1.04: [Eduardo] Removed clones. Revised clock delay for improved compatibility.
-// Version 1.05: [Eduardo] Fixed keys for batcirj, spf2t. Added games: ringdesth, spf2tu, ssf2th. Thank you smf.
-// Version 1.06: [Eduardo] Added back clones to avoid user confusion. Added ssf2tba, xmcotab. Thanks Brian & smf.
-//               [Artemio] Modified clock signal order for improved compatibility with board revs 4 & 5
-// Version 1.07: [Eduardo] Fixed keys for batcirj, spf2t, previously broken again in 1.06. Thanks Konosuke.
-// Version 2.07: [Fraido]  Forked from main repository. No LCD mod.
+// Version 1.00:  [Eduardo] Initial code.
+// Version 1.01:  [Artemio] Moved strings and keys to flash memory.
+// Version 1.02:  [Artemio] Removed spaces from game names, refactored code a bit, added left and right menu navigation.
+// Version 1.03:  [Artemio] Changed startup and end values in lines for consistent results on boards without CN9.
+// Version 1.04:  [Eduardo] Removed clones. Revised clock delay for improved compatibility.
+// Version 1.05:  [Eduardo] Fixed keys for batcirj, spf2t. Added games: ringdesth, spf2tu, ssf2th. Thank you smf.
+// Version 1.06:  [Eduardo] Added back clones to avoid user confusion. Added ssf2tba, xmcotab. Thanks Brian & smf.
+//                [Artemio] Modified clock signal order for improved compatibility with board revs 4 & 5
+// Version 1.07:  [Eduardo] Fixed keys for batcirj, spf2t, previously broken again in 1.06. Thanks Konosuke.
+// Version 1.07n: [Fraido]  Forked from main repository. No LCD mod.
 
 #define GAMEINDEX   0
 
@@ -537,7 +537,7 @@ int c = -1;
 
 void DisplayIntro()
 {
-  Serial.println("CPS2 Desuicide By ArcadeHacker");
+  Serial.println("CPS2 Desuicide By ArcadeHacker Version 1.07n");
   Serial.println("NoLCD Mod By Fraido");
 }
 
