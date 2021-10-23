@@ -12,7 +12,7 @@
 // Version 1.07: [Eduardo] Fixed keys for batcirj, spf2t, previously broken again in 1.06. Thanks Konosuke.
 // Version 2.07: [Fraido]  Forked from main repository. No LCD mod.
 
-#define GAMEINDEX   53
+#define GAMEINDEX   0
 
 //  CPS2 Board CN9 interface pins
 #define DATA        2   //CN9 #2 
