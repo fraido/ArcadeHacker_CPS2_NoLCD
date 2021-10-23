@@ -12,7 +12,7 @@
 // Version 1.07: [Eduardo] Fixed keys for batcirj, spf2t, previously broken again in 1.06. Thanks Konosuke.
 // Version 2.07: [Fraido]  Forked from main repository. No LCD mod.
 
-#define GAMEINDEX   52
+#define GAMEINDEX   53
 
 //  CPS2 Board CN9 interface pins
 #define DATA        2   //CN9 #2 
@@ -26,17 +26,6 @@
 //  SETUP1  ->  CN2 A30
 //  CLOCK   ->  CN2 A31
 //  SETUP2  ->  CN2 A29
-
-#define btnRIGHT  0
-#define btnUP     1
-#define btnDOWN   2
-#define btnLEFT   3
-#define btnSELECT 4
-#define btnNONE   5
-
-int lcd_key       = btnNONE;
-int adc_key_in    = 0;
-int adc_key_prev  = 0;
 
 // delay amount
 int time = 25;
@@ -548,9 +537,8 @@ int c = -1;
 
 void DisplayIntro()
 {
-  Serial.println("CPS2 Desuicide");
-  Serial.println("By ArcadeHacker");
-  delay(1000);
+  Serial.println("CPS2 Desuicide By ArcadeHacker");
+  Serial.println("NoLCD Mod By Fraido");
 }
 
 void DisplayMenu()
@@ -577,7 +565,6 @@ void setup() {
   DisplayMenu();
 }
 
-
 void CLK()
 {
   digitalWrite(CLOCK, HIGH); 
@@ -599,14 +586,15 @@ void ProgramCPS2(int prg)
   int test;
   unsigned char cByte;
 
-  Serial.println("Unlocking...");                  
+  Serial.println("Unlocking .....");                  
   
   program_unlock();      
   
-  Serial.println("Programming");
-  Serial.print("CPS2... %");
+  Serial.print("Programming ... ");
 
-  DisplayName(c);
+  DisplayName(prg);
+
+  Serial.print("Hex Keys ...... ");
    
   for(i=0; i<20; i++)        
   {   
@@ -633,9 +621,7 @@ void ProgramCPS2(int prg)
   digitalWrite(CLOCK, LOW);
   
   Serial.println("\n\nDone!");                   
-  delay(1000);       
-  
-  Serial.println("--disconnect and test pcb--"); 
+  Serial.println("Disconnect and test pcb."); 
 
 }
 
@@ -643,15 +629,13 @@ void DisplayName(int game)
 {
   int len = 0, i = 0;
 
-  if(c == -1)
-    return;
-
-  strcpy_P(buffer, (char*)pgm_read_word(&(GameList[c]))); 
+  strcpy_P(buffer, (char*)pgm_read_word(&(GameList[game]))); 
   len = strlen(buffer);
   for(i = len; i < 16; i++)
     buffer[i] = ' ';
   buffer[i] = '\0';
   Serial.println(buffer);
+ 
 }
 
 int FindNextIndex(int pos, int dir)
@@ -688,9 +672,7 @@ int FindNextIndex(int pos, int dir)
 void loop()
 {
 
-  int c = GAMEINDEX;
-  
-  ProgramCPS2(c);
+  ProgramCPS2(GAMEINDEX);
   while(1);
   
 }
